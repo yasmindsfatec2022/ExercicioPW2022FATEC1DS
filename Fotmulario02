@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<script>
+
+    function validar(){
+    var nome=formus.nome;
+    if(nome.value==""){
+        alert("NOME nao informado");
+        
+        nome.focus();
+    }
+
+   
+    var email=formus.email;
+    if(email.value==""){
+        alert("EMAIL nao informado");
+        email.focus();
+    }
+
+    var icpf=formus.icpf;
+    if(icpf.value==""){
+        alert("CPF nao informado");
+        icpf.focus();
+    }
+
+    var telefone=formus.telefone;
+    if(telefone.value==""){
+       
+        alert("TELEFONE nao informado");
+        telefone.focus();
+        
+    } 
+   
+    }
+
+
+function mascara_cpf(){
+ var icpf=document.getElementById('icpf')
+ if(icpf.value.length == 3 || icpf.value.length== 7 ){
+    icpf.value = icpf.value + "."
+ }else if(icpf.value.length == 11){
+    icpf.value = icpf.value + "-" 
+ }
+
+}
+ 
+
+
+
+</script>
+
+
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Documento sem título</title>
+<style>
+div{
+    width: 500px;
+    margin: 0 auto;
+    padding:0 auto;
+  
+}
+</style>
+<script src="js/form.js"></script>
+</head>
+
+<body >
+    
+    <div>
+        <form id="" name="formus" action="proc.php" method="post"
+          onsubmit="return false">
+            <table>
+                <tr>
+                    <td>NOME:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="nome" id="nome" size="50"
+                         onBlur="campoNomeChange()" onChange="campoNome()" value="">
+                        <span></span></td>
+                </tr>
+                <tr>
+                    <td>EMAIL:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="email" id="email" size="50" onBlur=""><span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CPF:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="icpf" id="icpf" size="14" 
+                        maxlength="14" onkeyup="" onKeyPress="mascara_cpf()" placeholder="___.___.___.__-__"
+                        
+                        ><span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TELEFONE:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="telefone" id="telefone" size="14" maxlength="14" onKeyPress="" onkeyup=" mascara_telefone()">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Escola sua Fruta:</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="fruta" id="fruta" value="maça"> MAÇA<br>
+                        <input type="radio" name="fruta" id="fruta" value="banana"> BANANA<br>
+                        <input type="radio" name="fruta" id="fruta" value="pera">PERA<br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Qual revista te interessa:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="rev1" id="rev1" value="php"> PHP<br>
+                        <input type="checkbox" name="rev2" id="rev2" value="html"> HTML<br>
+                        <input type="checkbox" name="rev3" id="rev3" value="javascript">JavaScript<br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td> Estado</td>
+
+                    </td>
+                <tr>
+                    <td>
+                        <select name="estado">
+                            <option value="estado">Selecione o Estado</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="se">Sergipe</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mensagem</td>
+                </tr>
+                <tr>
+                    <td><textarea id="ms" name="ms" cols="50" rows="10"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <input type="submit" id="btId" value="CADASTRO" onclick="validar()">
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+   
+   
+ 
+</body>
+
+</html>
